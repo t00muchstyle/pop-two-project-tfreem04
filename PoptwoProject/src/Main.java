@@ -10,7 +10,7 @@ public class Main {
         FractionImpl Fraction = new FractionImpl(30,40);
         System.out.println(Fraction.n);
         System.out.println(Fraction.d);
-//  passed 
+//  passed
 
     }
 }
