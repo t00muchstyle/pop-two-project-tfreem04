@@ -1,52 +1,41 @@
 package fraction;
 
 public class FractionImpl implements Fraction {
-    public int n;
-    public int d;
-//    public static void main (String[] arg){
+    private int numerator; // sets the numerator value of the fraction
+    private int denominator; // sets the denominator value of the fraction
 
-//        System.out.println(MakeFraction(8,12));
-//    /**
-//     * Parameters are the <em>numerator</em> and the <em>denominator</em>.
-//     * Normalize the fraction as you create it.
-//     * For instance, if the parameters are <pre>(8, -12)</pre>, create a <pre>Fraction</pre> with numerator
-//     * <pre>-2</pre> and denominator <pre>3</pre>.
-//     *
-//     * The constructor should throw an <pre>ArithmeticException</pre> if the denominator is zero.
-//     *
-//     * @param numerator
-//     * @param denominator
-//     */
+
     public  FractionImpl(int numerator, int denominator) {
-        // TODO
-        this.n = numerator;
-        this.d = denominator;
-        if (d==0) {// throw an IllegalArgumentException if the denominator is zero
+
+        this.numerator = numerator;
+        this.denominator = denominator;
+        if (this.denominator ==0) {// throw an IllegalArgumentException if the denominator is zero
             throw new IllegalArgumentException("not possible to use denominator zero");
         }
         else {
             int gcd = 1;
-            for (int i = 1; i <= n && i <= d; i++) {
-                if (n % i == 0 && d % i == 0)
+            for (int i = 1; i <= this.numerator && i <= this.denominator; i++) {
+                if (this.numerator % i == 0 && this.denominator % i == 0)
                     gcd = i;
             }
-            n /= gcd;
-            d /= gcd;
+            this.numerator /= gcd;
+            this.denominator /= gcd;
         }
-        //new Fraction
-
-        //return gcd;
+        if (this.numerator == 0) {
+            this.denominator = 1;
+        }
 
     }
-
     /**
      * The parameter is the numerator and <pre>1</pre> is the implicit denominator.
      *
      * @param wholeNumber representing the numerator
      */
     public FractionImpl(int wholeNumber) {
-        // TODO
-    }
+        this.denominator = 1;
+
+        this.numerator = wholeNumber;
+        }
 
     /**
      * The parameter is a <pre>String</pre> containing either a whole number, such as `5` or `-3`, or a fraction,
@@ -57,10 +46,27 @@ public class FractionImpl implements Fraction {
      * <p>
      * You may find it helpful to look at the available String API methods in the Java API.
      *
-     * @param fraction the string representation of the fraction
+     * //@param fraction the string representation of the fraction
      */
-    public FractionImpl(String fraction) {
 
+    public FractionImpl(String fraction) {
+        // takes in a string fraction and removes white spaces before and after characters
+        String f = fraction.replaceAll("\\s+"," ");
+        if (f.length() <=2){
+            this.numerator = Integer.parseInt(f);
+            this.denominator = 1;
+            // if the string is less than 2 which includes negative numbers it will return the integer vale and assign to numerator
+        }
+        // otherwise splits the sting at / to give the numerator and denominator
+        else{
+            String [] fs = fraction.split("/");
+            this.numerator = Integer.parseInt(f,0);
+            this.denominator = Integer.parseInt(f,1  );
+        }
+
+        //System.out.printf("%s",toString(this.numerator,this.denominator));
+//        String SFraction = "";
+//        SFraction = toString(numerator,denominator);
 
 
 
@@ -71,7 +77,12 @@ public class FractionImpl implements Fraction {
      */
     @Override
     public Fraction add(Fraction f) {
-        return null;
+        int a=this.numerator;
+        int b=this.denominator;
+
+        int f_num = ((FractionImpl) f).numerator, f_denom = ((FractionImpl) f).denominator;
+
+       return null ;
     }
 
     /**
@@ -157,8 +168,24 @@ public class FractionImpl implements Fraction {
     /**
      * @inheritDoc
      */
-    @Override
+    //@Override
+
     public String toString() {
-        return null;
-    }
+        // takes the numerator and denominator and returns the string values
+        //checks if the denominator is 1
+        String FractionString = "";
+        if (this.denominator !=1){
+            if (this.numerator >0) {
+                 FractionString = String.format("%denominator/%denominator", this.numerator, this.denominator);
+            }
+            else if (this.numerator <0){
+                FractionString =String.format("-%denominator",this.numerator);
+            }
+        }
+        else{
+            FractionString =String.format("%denominator",this.numerator);
+        }
+
+        return FractionString;
+}
 }
