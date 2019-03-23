@@ -7,7 +7,9 @@ public class Main {
     public static void main(String[] args) {
 // first test to see if the gcd is working and the new object is created.
         FractionImpl Fraction = new FractionImpl(30,40);
-        //System.out.println(Fraction.n);
+
+        Fraction.add(Fraction);
+        //System.out.printn(Fraction.n);
         //System.out.println(Fraction.d);
 //  passed
         System.out.print(Fraction.toString());

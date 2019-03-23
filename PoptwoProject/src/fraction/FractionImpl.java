@@ -17,10 +17,18 @@ public class FractionImpl implements Fraction {
             for (int i = 1; i <= this.numerator && i <= this.denominator; i++) {
                 if (this.numerator % i == 0 && this.denominator % i == 0)
                     gcd = i;
+
+
             }
+
             this.numerator /= gcd;
             this.denominator /= gcd;
         }
+//        if (this.numerator > this.denominator){
+//            int noWhole =
+//            this.numerator = this.numerator % this.denominator;
+//        }
+        //converting top heavy fractions ? ?? COME BACK TO LATER
         if (this.numerator == 0) {
             this.denominator = 1;
         }
@@ -58,18 +66,14 @@ public class FractionImpl implements Fraction {
             // if the string is less than 2 which includes negative numbers it will return the integer vale and assign to numerator
         }
         // otherwise splits the sting at / to give the numerator and denominator
-        else{
-            String [] fs = fraction.split("/");
-            this.numerator = Integer.parseInt(f,0);
-            this.denominator = Integer.parseInt(f,1  );
+        else {
+            String[] fs = fraction.split("/");
+            this.numerator = Integer.parseInt(f, 0);
+            this.denominator = Integer.parseInt(f, 1);
+            if (this.denominator == 0) {// throw an IllegalArgumentException if the denominator is zero
+                throw new IllegalArgumentException("not possible to use denominator zero");
+            }
         }
-
-        //System.out.printf("%s",toString(this.numerator,this.denominator));
-//        String SFraction = "";
-//        SFraction = toString(numerator,denominator);
-
-
-
     }
 
     /**
@@ -77,20 +81,29 @@ public class FractionImpl implements Fraction {
      */
     @Override
     public Fraction add(Fraction f) {
-        int a=this.numerator;
-        int b=this.denominator;
-
+        //
         int f_num = ((FractionImpl) f).numerator, f_denom = ((FractionImpl) f).denominator;
 
-       return null ;
-    }
+        numerator = (this.numerator)*f_denom + f_num*this.denominator;
+        // Calculate denominator of the sum - bd
+        denominator = this.denominator*f_denom;
 
+        Fraction answer = new FractionImpl(numerator, denominator);
+        return answer;
+    }
     /**
      * @inheritDoc
      */
     @Override
     public Fraction subtract(Fraction f) {
-        return null;
+
+        int f_num = ((FractionImpl) f).numerator, f_denom = ((FractionImpl) f).denominator;
+        numerator = (this.numerator*f_denom) - (f_num * denominator);
+        denominator=(this.denominator *f_denom)-(f_denom*this.denominator);
+
+        Fraction answer = new FractionImpl(numerator,denominator);
+
+        return answer;
     }
 
     /**
@@ -98,7 +111,14 @@ public class FractionImpl implements Fraction {
      */
     @Override
     public Fraction multiply(Fraction f) {
-        return null;
+
+        int f_num = ((FractionImpl) f).numerator, f_denom = ((FractionImpl) f).denominator;
+        numerator = (this.numerator*f_num);
+        denominator = (this.denominator*f_denom);
+
+        Fraction answer = new FractionImpl(numerator, denominator);
+
+        return answer;
     }
 
     /**
@@ -106,7 +126,12 @@ public class FractionImpl implements Fraction {
      */
     @Override
     public Fraction divide(Fraction f) {
-        return null;
+
+        int f_num = ((FractionImpl) f).numerator, f_denom = ((FractionImpl) f).denominator;
+        numerator = (this.numerator*f_denom);
+        denominator=(this.denominator*f_num);
+        Fraction answer = new FractionImpl(numerator, denominator);
+        return answer;
     }
 
     /**
@@ -114,7 +139,15 @@ public class FractionImpl implements Fraction {
      */
     @Override
     public Fraction abs() {
-        return null;
+        int a;
+        if (this.numerator <0){
+            a = this.numerator * -1;
+            Fraction absolute = new FractionImpl(a, denominator);
+            return absolute;
+        }
+        else{
+            return new FractionImpl(this.numerator,this.denominator);
+        }
     }
 
     /**
@@ -154,7 +187,11 @@ public class FractionImpl implements Fraction {
      */
     @Override
     public Fraction inverse() {
-        return null;
+        int temp;
+        temp = this.numerator;
+        this.numerator = this.denominator;
+        this.denominator = temp;
+        return new FractionImpl(this.numerator,this.denominator);
     }
 
     /**
@@ -162,6 +199,7 @@ public class FractionImpl implements Fraction {
      */
     @Override
     public int compareTo(Fraction o) {
+
         return 0;
     }
 
@@ -176,14 +214,14 @@ public class FractionImpl implements Fraction {
         String FractionString = "";
         if (this.denominator !=1){
             if (this.numerator >0) {
-                 FractionString = String.format("%denominator/%denominator", this.numerator, this.denominator);
+                 FractionString = String.format("%d/%d", this.numerator, this.denominator);
             }
             else if (this.numerator <0){
-                FractionString =String.format("-%denominator",this.numerator);
+                FractionString =String.format("-%d",this.numerator);
             }
         }
         else{
-            FractionString =String.format("%denominator",this.numerator);
+            FractionString =String.format("%d",this.numerator);
         }
 
         return FractionString;
