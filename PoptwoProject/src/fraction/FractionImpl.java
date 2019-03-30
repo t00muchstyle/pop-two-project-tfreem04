@@ -90,11 +90,12 @@ public class FractionImpl implements Fraction {
 //    takes an object of type fraction and substracts a fraction from this object
 ////    returning a new fraction object
     public Fraction subtract(Fraction f) {
-        int f_num = ((FractionImpl) f).numerator, f_denom = ((FractionImpl) f).denominator;
-        int num = (this.numerator*f_denom) - (f_num * denominator);
-        int denom=(this.denominator *f_denom)-(f_denom*this.denominator);
 
-        Fraction answer = new FractionImpl(num,denom);
+        int f_num = ((FractionImpl) f).numerator, f_denom = ((FractionImpl) f).denominator;
+         numerator = (this.numerator)*f_denom - f_num * this.denominator;
+         denominator =(this.denominator *f_denom);
+
+        Fraction answer = new FractionImpl(numerator,denominator);
 
         return answer;
     }
@@ -107,8 +108,8 @@ public class FractionImpl implements Fraction {
     public Fraction multiply(Fraction f) {
 
         int f_num = ((FractionImpl) f).numerator, f_denom = ((FractionImpl) f).denominator;
-        numerator = (this.numerator*f_num);
-        denominator = (this.denominator*f_denom);
+        numerator = (this.numerator)*f_num;
+        denominator = (this.denominator)*f_denom;
 
         Fraction answer = new FractionImpl(numerator, denominator);
 
