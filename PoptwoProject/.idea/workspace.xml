@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9377ad65-3080-4dc1-b035-88ee6897f501" name="Default Changelist" comment="" />
+    <list default="true" id="9377ad65-3080-4dc1-b035-88ee6897f501" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PoptwoProject/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PoptwoProject/Main.class" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,8 +25,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1173">
-              <caret line="75" column="37" selection-start-line="75" selection-start-column="37" selection-end-line="75" selection-end-column="37" />
+            <state relative-caret-position="2397">
+              <caret line="141" column="59" lean-forward="true" selection-start-line="141" selection-start-column="59" selection-end-line="141" selection-end-column="59" />
             </state>
           </provider>
         </entry>
@@ -31,12 +34,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/fraction/FractionImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="111" column="48" selection-start-line="111" selection-start-column="48" selection-end-line="111" selection-end-column="48" />
+            <state relative-caret-position="55">
+              <caret line="143" column="28" lean-forward="true" selection-start-line="143" selection-start-column="28" selection-end-line="143" selection-end-column="28" />
               <folding>
-                <element signature="e#5343#5344#0" expanded="true" />
-                <element signature="e#5460#5461#0" expanded="true" />
-                <element signature="e#5590#5591#0" expanded="true" />
+                <element signature="e#5604#5605#0" expanded="true" />
+                <element signature="e#5643#5644#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -81,8 +83,9 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553970947833" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553990041225" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../Poker Face/src/Main.java" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RunDashboard">
@@ -145,16 +148,17 @@
       <workItem from="1552941345416" duration="130000" />
       <workItem from="1552941690658" duration="20958000" />
       <workItem from="1553380896139" duration="4445000" />
-      <workItem from="1553944455027" duration="23879000" />
+      <workItem from="1553944455027" duration="25161000" />
+      <workItem from="1553983746341" duration="273000" />
+      <workItem from="1553983743922" duration="6167000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="61392000" />
+    <option name="totallyTimeSpent" value="69114000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1455" height="935" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.5154122" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -165,7 +169,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32876712" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3113325" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.31382316" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39975095" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -176,7 +180,6 @@
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.32876712" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.3312578" />
-      <window_info anchor="right" id="Coverage" side_tool="true" weight="0.32986626" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -186,6 +189,7 @@
       <window_info anchor="right" id="Capture Analysis" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Database" order="8" />
+      <window_info anchor="right" id="Coverage" order="9" side_tool="true" weight="0.32986626" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -224,9 +228,6 @@
     <entry file="file://$USER_HOME$/Downloads/Main (11).java">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/fraction/Fraction.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk-11.0.2/lib/src.zip!/java.base/java/lang/Integer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="277">
@@ -246,22 +247,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/fraction/Fraction.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/fraction/FractionImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="111" column="48" selection-start-line="111" selection-start-column="48" selection-end-line="111" selection-end-column="48" />
+        <state relative-caret-position="55">
+          <caret line="143" column="28" lean-forward="true" selection-start-line="143" selection-start-column="28" selection-end-line="143" selection-end-column="28" />
           <folding>
-            <element signature="e#5343#5344#0" expanded="true" />
-            <element signature="e#5460#5461#0" expanded="true" />
-            <element signature="e#5590#5591#0" expanded="true" />
+            <element signature="e#5604#5605#0" expanded="true" />
+            <element signature="e#5643#5644#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1173">
-          <caret line="75" column="37" selection-start-line="75" selection-start-column="37" selection-end-line="75" selection-end-column="37" />
+        <state relative-caret-position="2397">
+          <caret line="141" column="59" lean-forward="true" selection-start-line="141" selection-start-column="59" selection-end-line="141" selection-end-column="59" />
         </state>
       </provider>
     </entry>
