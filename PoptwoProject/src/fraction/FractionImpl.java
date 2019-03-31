@@ -88,7 +88,7 @@ public class FractionImpl implements Fraction {
      */
     @Override
 //    takes an object of type fraction and substracts a fraction from this object
-////    returning a new fraction object
+////    returning a new fraction object answer
     public Fraction subtract(Fraction f) {
 
         int f_num = ((FractionImpl) f).numerator, f_denom = ((FractionImpl) f).denominator;
@@ -105,7 +105,7 @@ public class FractionImpl implements Fraction {
      */
     @Override
     //    takes an object of type fraction and multiply's a fraction to this object
-//   returning a new fraction object
+//   returning a new fraction object answer
     public Fraction multiply(Fraction f) {
 
         int f_num = ((FractionImpl) f).numerator, f_denom = ((FractionImpl) f).denominator;
@@ -122,7 +122,7 @@ public class FractionImpl implements Fraction {
      */
     @Override
     //    takes an object of type fraction and divides a fraction to this object
-////    returning a new fraction object
+////    returning a new fraction object answer
     public Fraction divide(Fraction f) {
 
         int f_num = ((FractionImpl) f).numerator, f_denom = ((FractionImpl) f).denominator;
@@ -136,6 +136,9 @@ public class FractionImpl implements Fraction {
      * @inheritDoc
      */
     @Override
+
+    // returns the absolute value of a fraction
+    // turns a negative fraction positive by multiplying the numerator by -1.
     public Fraction abs() {
         int a;
         if (this.numerator < 0) {
@@ -151,6 +154,10 @@ public class FractionImpl implements Fraction {
      * @inheritDoc
      */
     @Override
+
+    // negates the fraction to the equivalent negative value by changing the sign of the numerator.
+    // returns the negative version of the fraction
+
     public Fraction negate() {
         int a;
         //if(this.numerator>0){
@@ -172,6 +179,9 @@ public class FractionImpl implements Fraction {
      * @inheritDoc
      */
     @Override
+    // equals method takes an object as the parameter
+    // and checks to see if the object has the say parameters as fraction
+    //if so it check to see if the value of each object matches.
     public boolean equals(Object obj) {
         if (obj == null){
             return false;
@@ -199,7 +209,11 @@ public class FractionImpl implements Fraction {
      * @inheritDoc
      */
     @Override
+
+    // inverse uses an instance of fraction and swaps the numerator with the denominator to return an inverse of the object.
+    //
     public Fraction inverse() {
+        // a temp value is created to make the switch
         int temp;
         temp = this.numerator;
         this.numerator = this.denominator;
@@ -210,18 +224,36 @@ public class FractionImpl implements Fraction {
      * @inheritDoc
      */
     @Override
+
+    //This method returns:
+    //A negative int if this is less than o.
+    //Zero if this is equal to o.
+    //A positive int if this is greater than o.
     public int compareTo(Fraction o) {
 
-        return 0;
+        int comp ;
+        // if the parametes do match with a Fraction object then compare the numerators and denominators.
+        FractionImpl CompareOther = new FractionImpl(String.valueOf(o));// converts obj to string so it can be passed and a new fraction created.
+        if (this.numerator > CompareOther.numerator && this.denominator
+                < CompareOther.denominator){
+        comp= 1;}
+        else if(this.numerator == CompareOther.numerator && this.denominator
+                == CompareOther.denominator) {
+            comp = 0;
+        }
+        else{
+            comp=-1;
+        }
+        return comp;
     }
 
     /**
      * @inheritDoc
      */
     //@Override
-
+    //returns the string version of a fraction obj
     public String toString() {
-        // takes the numerator and denominator and returns the string values
+        // uses the numerator and denominator and returns the string values
         //checks if the denominator is 1
         String FractionString = "";
         if (this.denominator !=1){

@@ -133,39 +133,31 @@ public class Main {
         //                Tests for equals
 
         FractionImpl FractionEquals1 = new FractionImpl(1,2);
-//        FractionImpl FractionEquals2 = new FractionImpl(8,18);
-        FractionImpl FractionEquals3 = new FractionImpl(1,5);
+        FractionImpl FractionEquals2 = new FractionImpl(8,18);
+        FractionImpl FractionEquals3 = new FractionImpl(8,18);
         FractionImpl FractionEquals4 = new FractionImpl(1,2);
-//        FractionImpl FractionEquals5 = new FractionImpl(3,87);
-//        FractionImpl FractionEquals6 = new FractionImpl(12,15);
+        FractionImpl FractionEquals5 = new FractionImpl(3,87);
+        FractionImpl FractionEquals6 = new FractionImpl(12,15);
 
-        System.out.println(FractionEquals1.equals(Fraction2));
+        System.out.println(FractionEquals1.equals(FractionEquals2));
         System.out.println(FractionEquals1.equals(FractionEquals4));
-//        System.out.println(FractionNeg2.negate());
-//        System.out.println(FractionNeg4.negate());
-//        System.out.println(FractionNeg5.negate());
-//        System.out.println(FractionNeg6.negate());
-
-
+        System.out.println(FractionEquals5.equals(FractionEquals6));
+        System.out.println(FractionEquals3.equals(FractionEquals2));
+        System.out.println(FractionEquals5.equals(FractionEquals6));
+        System.out.println(FractionEquals5.equals(FractionEquals6));
 
 
         //                Tests for inverse
 
+        FractionImpl FractionInverse1 = new FractionImpl(1,2);
+        FractionImpl FractionInverse2 = new FractionImpl(8,18);
+        FractionImpl FractionInverse3 = new FractionImpl(3,4);
+
+        System.out.println (FractionInverse1.inverse());
+        System.out.println (FractionInverse2.inverse());
+        System.out.println (FractionInverse3.inverse());
 
         //                Tests for Compare to
-
-
-
-        //                Tests for toString
-
-
-
-
-
-
-
-
-
 
 
 
