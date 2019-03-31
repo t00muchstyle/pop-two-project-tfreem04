@@ -122,7 +122,7 @@ public class FractionImpl implements Fraction {
      */
     @Override
     //    takes an object of type fraction and divides a fraction to this object
-////    returning a new fraction object answer
+//    returning a new fraction object answer
     public Fraction divide(Fraction f) {
 
         int f_num = ((FractionImpl) f).numerator, f_denom = ((FractionImpl) f).denominator;
@@ -232,10 +232,9 @@ public class FractionImpl implements Fraction {
     public int compareTo(Fraction o) {
 
         int comp ;
-        // if the parametes do match with a Fraction object then compare the numerators and denominators.
+        // if the parameters do match with a Fraction object then compare the numerators and denominators.
         FractionImpl CompareOther = new FractionImpl(String.valueOf(o));// converts obj to string so it can be passed and a new fraction created.
-        if (this.numerator > CompareOther.numerator && this.denominator
-                < CompareOther.denominator){
+        if (this.denominator < CompareOther.denominator){
         comp= 1;}
         else if(this.numerator == CompareOther.numerator && this.denominator
                 == CompareOther.denominator) {

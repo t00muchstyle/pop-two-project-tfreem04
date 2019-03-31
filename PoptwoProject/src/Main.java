@@ -159,6 +159,20 @@ public class Main {
 
         //                Tests for Compare to
 
+        FractionImpl FractionCompare1 = new FractionImpl(1,2);
+        FractionImpl FractionCompare2 = new FractionImpl(1,12);
+        FractionImpl FractionCompare3 = new FractionImpl(3,4);
+        FractionImpl FractionCompare4 = new FractionImpl(2,4);
+        FractionImpl FractionCompare5 = new FractionImpl(3,4);
+
+
+        System.out.println (FractionCompare1.compareTo(FractionCompare2));
+        System.out.println (FractionCompare2.compareTo(FractionCompare3));
+        System.out.println (FractionCompare2.compareTo(FractionCompare3));
+        System.out.println (FractionCompare4.compareTo(FractionCompare5));
+        System.out.println (FractionCompare3.compareTo(FractionCompare5));
+
+
 
 
     }
