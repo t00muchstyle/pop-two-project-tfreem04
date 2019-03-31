@@ -10,7 +10,7 @@ public class FractionImpl implements Fraction {
         if (denominator == 0) {// throw an IllegalArgumentException if the denominator is zero
             throw new IllegalArgumentException("not possible to use denominator zero");
         }
-        if (denominator < 0) {
+        if (denominator < 0) {//checks if denominator is less than 0
             negative = true;
             denominator = denominator * -1;
         }
@@ -30,13 +30,8 @@ public class FractionImpl implements Fraction {
             this.denominator = denominator / gcd;
         }
     }
-//        if (this.numerator > this.denominator){
-//            int noWhole =
-//            this.numerator = this.numerator % this.denominator;
-//        }
-    //converting top heavy fractions ? ?? COME BACK TO LATER
 
-    //Takes and integer and creates the fraction value of this wholenumber
+    //Takes and integer and creates the fraction value of this whole number
     public FractionImpl(int wholeNumber) {
         this.denominator = 1;
         this.numerator = wholeNumber;
@@ -72,7 +67,7 @@ public class FractionImpl implements Fraction {
 //    takes an object of type fraction and adds a fraction to this object
 ////    returning a new fraction object
     public Fraction add(Fraction f) {
-        //
+        //get the fraction f denominator and numerator values
         int f_num = ((FractionImpl) f).numerator, f_denom = ((FractionImpl) f).denominator;
 
         numerator = (this.numerator) * f_denom + f_num * this.denominator;
@@ -87,14 +82,17 @@ public class FractionImpl implements Fraction {
      * @inheritDoc
      */
     @Override
-//    takes an object of type fraction and substracts a fraction from this object
+//    takes an object of type fraction and subtracts a fraction from this object
 ////    returning a new fraction object answer
     public Fraction subtract(Fraction f) {
 
         int f_num = ((FractionImpl) f).numerator, f_denom = ((FractionImpl) f).denominator;
-        numerator = (this.numerator) * f_denom - f_num * this.denominator;
-        denominator = (this.denominator * f_denom);
 
+        // calculates the new numerator value
+        numerator = (this.numerator) * f_denom - f_num * this.denominator;
+        //calculates the new denominator value
+        denominator = (this.denominator * f_denom);
+//  returns the new fractions in its lowest form
         Fraction answer = new FractionImpl(numerator, denominator);
 
         return answer;
@@ -109,7 +107,10 @@ public class FractionImpl implements Fraction {
     public Fraction multiply(Fraction f) {
 
         int f_num = ((FractionImpl) f).numerator, f_denom = ((FractionImpl) f).denominator;
+        //calculates the numerator value after multiplying
         numerator = (this.numerator) * f_num;
+
+        //calculates the denominator after multiplying
         denominator = (this.denominator) * f_denom;
 
         Fraction answer = new FractionImpl(numerator, denominator);
@@ -126,7 +127,9 @@ public class FractionImpl implements Fraction {
     public Fraction divide(Fraction f) {
 
         int f_num = ((FractionImpl) f).numerator, f_denom = ((FractionImpl) f).denominator;
+        //calculates the numerator after dividing
         numerator = (this.numerator * f_denom);
+        // calculates the denominator after dividing
         denominator = (this.denominator * f_num);
         Fraction answer = new FractionImpl(numerator, denominator);
         return answer;
@@ -264,7 +267,7 @@ public class FractionImpl implements Fraction {
             }
         }
         else{
-            FractionString =String.format("%d",this.numerator);
+            FractionString =String.format("%d/%d",this.numerator,this.denominator);
         }
 
         return FractionString;

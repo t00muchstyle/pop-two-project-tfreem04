@@ -34,11 +34,11 @@ public class Main {
         FractionImpl Fraction16 = new FractionImpl(1,4);
 
 //  passed
-//        System.out.println(Fraction8.toString());
-//        System.out.println(Fraction.toString());
-//        System.out.println(Fraction);
-//        System.out.println(Fraction2);
-//        System.out.println(Fraction3);
+        System.out.println(Fraction8.toString());
+        System.out.println(Fraction8.toString());
+        System.out.println(Fraction);
+        System.out.println(Fraction2);
+        System.out.println(Fraction3);
 
         //Tests for string parameter fractions
         System.out.println(FractionStr10);
