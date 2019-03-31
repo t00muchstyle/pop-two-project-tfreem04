@@ -27,7 +27,7 @@ public class Main {
         FractionImpl Fraction17 = new FractionImpl("2/3    ");
         FractionImpl Fraction18 = new FractionImpl("                         100/     400");
 
-        //FractionImpl Fraction13 = new FractionImpl("14/0");
+        //FractionImpl FractionStr13 = new FractionImpl("14/0");
         //exception is thrown
         FractionImpl FractionStr14 = new FractionImpl("1");
         FractionImpl Fraction15 = new FractionImpl(2,4);
@@ -44,28 +44,42 @@ public class Main {
         System.out.println(FractionStr10);
         System.out.println(FractionStr11);
         System.out.println(FractionStr12);
-        //System.out.println(Fraction13);
+        // exception thrown System.out.println(FractionStr13);
         System.out.println(FractionStr14);
 
 
         //        Tests for add method
 
-//        System.out.println(Fraction3.add(Fraction2));
-//        System.out.println(Fraction4.add(Fraction5));
-//        System.out.println(Fraction7.add(Fraction8));
-//        System.out.println(Fraction7.add(Fraction9));
-//        System.out.println(Fraction7.add(Fraction9));
+        FractionImpl FractionAdd7 = new FractionImpl(2,10);
+        FractionImpl FractionAdd8 = new FractionImpl(0,1);
+        FractionImpl FractionAdd9 = new FractionImpl(3,10);
+        FractionImpl FractionAdd5 = new FractionImpl(8,-12);
+        FractionImpl FractionAdd2 = new FractionImpl(20,40);
+        FractionImpl FractionAdd3 = new FractionImpl(20,40);
+        FractionImpl FractionAdd4 = new FractionImpl(1,2);
+
+        System.out.println(FractionAdd3.add(FractionAdd2));
+        System.out.println(FractionAdd4.add(FractionAdd5));
+        System.out.println(FractionAdd7.add(FractionAdd8));
+        System.out.println(FractionAdd7.add(FractionAdd9));
+        System.out.println(FractionAdd7.add(FractionAdd9));
 
 
 
 //                Tests for subtraction
+        FractionImpl FractionSub7 = new FractionImpl(5,10);
+        FractionImpl FractionSub8 = new FractionImpl(1,1);
+        FractionImpl FractionSub9 = new FractionImpl(6,8);
+        FractionImpl FractionSub5 = new FractionImpl(8,-12);
+        FractionImpl FractionSub2 = new FractionImpl(30,40);
+        FractionImpl FractionSub3 = new FractionImpl(40,50);
+        FractionImpl FractionSub6 = new FractionImpl(1,2);
 
+        System.out.println(FractionSub3.subtract(FractionSub2));
+        System.out.println(FractionSub5.subtract(FractionSub6));
 
-//        System.out.println(Fraction3.subtract(Fraction2));
-//        System.out.println(Fraction15.subtract(Fraction16));
-//
-//        System.out.println(Fraction7.subtract(Fraction8));
-//        System.out.println(Fraction7.subtract(Fraction9));
+        System.out.println(FractionSub7.subtract(FractionSub8));
+        System.out.println(FractionSub8.subtract(FractionSub9));
 
         //                Tests for Multiply
 
@@ -86,13 +100,13 @@ public class Main {
         FractionImpl FractiondDiv4 = new FractionImpl(11,22);
         FractionImpl FractiondDiv5 = new FractionImpl(34,87);
         FractionImpl FractiondDiv6 = new FractionImpl(1,1);
-
+        FractionImpl FractiondDiv7 = new FractionImpl(1,1);
 
 
         System.out.println(FractiondDiv3.divide(FractiondDiv2));
         System.out.println(FractiondDiv5.divide(FractiondDiv4));
         System.out.println(FractionDiv1.divide(FractiondDiv6));
-        //System.out.println(Fraction10.divide(Fraction10));
+        System.out.println(FractionDiv1.divide(FractiondDiv7));
         //System.out.println(Fraction17.divide(Fraction16));
 
         // all tests passed
