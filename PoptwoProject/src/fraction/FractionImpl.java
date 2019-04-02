@@ -6,13 +6,18 @@ public class FractionImpl implements Fraction {
 
     // gives the lowest common denominator of 2 integer numbers
     public FractionImpl(int numerator, int denominator) {
-        boolean negative = false;
+        boolean dnegative = false;
+        boolean nnegative = false;
         if (denominator == 0) {// throw an IllegalArgumentException if the denominator is zero
             throw new IllegalArgumentException("not possible to use denominator zero");
         }
         if (denominator < 0) {//checks if denominator is less than 0
-            negative = true;
+            dnegative = true;
             denominator = denominator * -1;
+        }
+        if(numerator <0) {
+            nnegative = true;
+            numerator = Math.abs(numerator);
         }
         int gcd = 1;
         for (int i = 1; i <= numerator && i <= denominator; i++) {
@@ -20,14 +25,23 @@ public class FractionImpl implements Fraction {
                 gcd = i;
             }
         }
-        if (negative == true) {
+        this.numerator =numerator/gcd;
+        this.denominator =denominator/gcd;
+        if (numerator == denominator) {
+            this.numerator = 1;
+            this.denominator =1;
+        }
+
+        if (dnegative == true) {
 
             this.numerator = numerator / gcd;
             this.denominator = denominator / gcd;
             this.numerator = this.numerator * -1;
-        } else {
+        }
+        else if (nnegative == true) {
             this.numerator = numerator / gcd;
             this.denominator = denominator / gcd;
+            this.numerator = this.numerator *-1;
         }
     }
 
@@ -93,7 +107,10 @@ public class FractionImpl implements Fraction {
         //calculates the new denominator value
         int AnswerDen = (this.denominator * f_denom);
 //  returns the new fractions in its lowest form
+
         Fraction answer = new FractionImpl(AnswerNum, AnswerDen);
+
+
 
         return answer;
     }
@@ -196,10 +213,10 @@ public class FractionImpl implements Fraction {
         if (obj instanceof Fraction == false) {//if obj parameters do not match a Fraction object then return false
             return false;
         }
-            // if the parametes do match with a Fraction object then compare the numerators and denominators.
+        // if the parametes do match with a Fraction object then compare the numerators and denominators.
         FractionImpl other = new FractionImpl(String.valueOf(obj));// converts obj to string so it can be passed and a new fraction created.
         return this.numerator == other.numerator && this.denominator
-                 == other.denominator;
+                == other.denominator;
 
     }
 
@@ -243,7 +260,7 @@ public class FractionImpl implements Fraction {
         // if the parameters do match with a Fraction object then compare the numerators and denominators.
         FractionImpl CompareOther = new FractionImpl(String.valueOf(o));// converts obj to string so it can be passed and a new fraction created.
         if (this.denominator < CompareOther.denominator){
-        comp= 1;}
+            comp= 1;}
         else if(this.numerator == CompareOther.numerator && this.denominator
                 == CompareOther.denominator) {
             comp = 0;
@@ -265,10 +282,13 @@ public class FractionImpl implements Fraction {
         String FractionString = "";
         if (this.denominator !=1){
             if (this.numerator >0) {
-                 FractionString = String.format("%d/%d", this.numerator, this.denominator);
+                FractionString = String.format("%d/%d", this.numerator, this.denominator);
             }
             else if (this.numerator <0){
                 FractionString =String.format("%d/%d",this.numerator,this.denominator);
+            } else if (this.numerator == 0) {
+                FractionString =String.format("0/1");
+
             }
         }
         else{
@@ -276,5 +296,5 @@ public class FractionImpl implements Fraction {
         }
 
         return FractionString;
-}
+    }
 }
