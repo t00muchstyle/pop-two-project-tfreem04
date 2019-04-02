@@ -35,7 +35,7 @@ public class Main {
 
 //  passed
         System.out.println(Fraction8.toString());
-        System.out.println(Fraction8.toString());
+        System.out.println(FractionStr10.toString());
         System.out.println(Fraction);
         System.out.println(Fraction2);
         System.out.println(Fraction3);

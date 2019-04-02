@@ -70,10 +70,10 @@ public class FractionImpl implements Fraction {
         //get the fraction f denominator and numerator values
         int f_num = ((FractionImpl) f).numerator, f_denom = ((FractionImpl) f).denominator;
 
-        numerator = (this.numerator) * f_denom + f_num * this.denominator;
+        int AnswerNum = (this.numerator) * f_denom + f_num * this.denominator;
         // Calculate denominator of the sum - bd
-        denominator = this.denominator * f_denom;
-        Fraction answer = new FractionImpl(numerator, denominator);
+        int AnswerDen = this.denominator * f_denom;
+        Fraction answer = new FractionImpl(AnswerNum, AnswerDen);
 
         return answer;
     }
@@ -89,11 +89,11 @@ public class FractionImpl implements Fraction {
         int f_num = ((FractionImpl) f).numerator, f_denom = ((FractionImpl) f).denominator;
 
         // calculates the new numerator value
-        numerator = (this.numerator) * f_denom - f_num * this.denominator;
+        int AnswerNum = (this.numerator) * f_denom - f_num * this.denominator;
         //calculates the new denominator value
-        denominator = (this.denominator * f_denom);
+        int AnswerDen = (this.denominator * f_denom);
 //  returns the new fractions in its lowest form
-        Fraction answer = new FractionImpl(numerator, denominator);
+        Fraction answer = new FractionImpl(AnswerNum, AnswerDen);
 
         return answer;
     }
@@ -108,12 +108,12 @@ public class FractionImpl implements Fraction {
 
         int f_num = ((FractionImpl) f).numerator, f_denom = ((FractionImpl) f).denominator;
         //calculates the numerator value after multiplying
-        numerator = (this.numerator) * f_num;
+        int AnswerNum = (this.numerator) * f_num;
 
         //calculates the denominator after multiplying
-        denominator = (this.denominator) * f_denom;
+        int AnswerDen = (this.denominator) * f_denom;
 
-        Fraction answer = new FractionImpl(numerator, denominator);
+        Fraction answer = new FractionImpl(AnswerNum, AnswerDen);
 
         return answer;
     }
@@ -128,10 +128,10 @@ public class FractionImpl implements Fraction {
 
         int f_num = ((FractionImpl) f).numerator, f_denom = ((FractionImpl) f).denominator;
         //calculates the numerator after dividing
-        numerator = (this.numerator * f_denom);
+        int AnswerNum = (this.numerator * f_denom);
         // calculates the denominator after dividing
-        denominator = (this.denominator * f_num);
-        Fraction answer = new FractionImpl(numerator, denominator);
+        int AnswernumDen = (this.denominator * f_num);
+        Fraction answer = new FractionImpl(AnswerNum, AnswernumDen);
         return answer;
     }
 
@@ -143,13 +143,15 @@ public class FractionImpl implements Fraction {
     // returns the absolute value of a fraction
     // turns a negative fraction positive by multiplying the numerator by -1.
     public Fraction abs() {
-        int a;
+        int answerNum = this.numerator;
+        int answerDen =this.denominator;
         if (this.numerator < 0) {
-            a = this.numerator * -1;
-            Fraction absolute = new FractionImpl(a, denominator);
+            answerNum = this.numerator * -1;
+            answerDen= this.denominator;
+            Fraction absolute = new FractionImpl(answerNum,answerDen);
             return absolute;
         } else {
-            return new FractionImpl(this.numerator, this.denominator);
+            return new FractionImpl(answerNum, answerDen);
         }
     }
 
@@ -162,10 +164,11 @@ public class FractionImpl implements Fraction {
     // returns the negative version of the fraction
 
     public Fraction negate() {
-        int a;
+        int answerNum;
+        int answerDen= this.denominator;
         //if(this.numerator>0){
-        a = this.numerator * -1;
-        Fraction negateF = new FractionImpl(a, denominator);
+        answerNum = this.numerator * -1;
+        Fraction negateF = new FractionImpl(answerNum, answerDen);
 
 
         return negateF;
@@ -218,10 +221,12 @@ public class FractionImpl implements Fraction {
     public Fraction inverse() {
         // a temp value is created to make the switch
         int temp;
-        temp = this.numerator;
-        this.numerator = this.denominator;
-        this.denominator = temp;
-        return new FractionImpl(this.numerator,this.denominator);
+        int AnswerNum = this.numerator;
+        int AnswerDen = this.denominator;
+        temp = AnswerNum;
+        AnswerNum = AnswerDen;
+        AnswerDen = temp;
+        return new FractionImpl(AnswerNum,AnswerDen);
     }
     /**
      * @inheritDoc
